@@ -22,9 +22,8 @@ This repository contains a simple FastAPI service made production-ready with:
 
 #Project Structure
 
+```bash
 production-deployment/
-  
-├── app.py
 ├── Dockerfile
 ├── requirements.txt
 ├── k8s/                     # Kubernetes manifests
@@ -53,13 +52,15 @@ production-deployment/
 └── RUNBOOK.md
 
 ---
-Docker Usage
+# Build the image
+docker build -t yourusername/fastapi-service:latest .
 
-#Build the image
-docker build -t yourusername/fastapi-service:1.0.0 .
+# Run locally
+docker run -p 8000:8000 yourusername/fastapi-service:latest
+
 
 #Run locally
-docker run -p 8000:8000 yourusername/fastapi-service:1.0.0
+docker run -p 8000:8000 yourusername/fastapi-service:latest
 
 ---
 Kubernetes Deployment
