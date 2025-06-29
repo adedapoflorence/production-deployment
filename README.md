@@ -24,8 +24,13 @@ This repository contains a simple FastAPI service made production-ready with:
 
 ```bash
 production-deployment/
-├── Dockerfile
+├── app.py
 ├── requirements.txt
+├── Dockerfile
+├── terraform              # IaC
+    ├── cluster-vpc.tf
+    ├── project-cluster.tf
+    ├── variable.tf
 ├── k8s/                     # Kubernetes manifests
 │   ├── deployment.yaml
 │   ├── service.yaml
@@ -37,11 +42,11 @@ production-deployment/
 │   └── serviceaccount.yaml
 ├── .github/workflows/       # CI/CD pipeline
 │   └── deploy.yml
-├── monitoring/              # Prometheus & Grafana
+├── monitoring/              # Observability
 │   ├── prometheus.yml
 │   ├── alerts.yml
 │   └── grafana-dashboard.json
-├── scripts/                 # Helper scripts
+├── scripts/                 # Automation
 │   ├── deploy.sh
 │   ├── health-check.sh
 │   └── rollback.sh
