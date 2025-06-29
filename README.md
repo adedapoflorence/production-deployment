@@ -52,6 +52,8 @@ production-deployment/
 └── RUNBOOK.md
 
 ---
+Docker Usage
+
 # Build the image
 docker build -t yourusername/fastapi-service:latest .
 
@@ -70,7 +72,8 @@ kubectl apply -f k8s/ -n production
 
 ---
 CI/CD Pipeline
-the pipeline woud automatically:
+
+The pipeline would automatically:
 
 1. Builds and pushes the Docker image
 
