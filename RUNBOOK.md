@@ -42,7 +42,9 @@ kubectl apply -f k8s/ -n production
 
 Manual
 kubectl get pods -n production
+
 kubectl port-forward svc/fastapi-service 8000:8000 -n production
+
 curl http://localhost:8000/health
 
 Automated
