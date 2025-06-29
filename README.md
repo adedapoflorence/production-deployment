@@ -28,7 +28,6 @@ production-deployment/
 ├── requirements.txt
 ├── Dockerfile
 ├── terraform              # IaC
-    ├── cluster-vpc.tf
     ├── project-cluster.tf
     ├── variable.tf
 ├── k8s/                     # Kubernetes manifests
