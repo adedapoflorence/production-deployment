@@ -39,7 +39,7 @@ kubectl apply -f k8s/ -n production
 ---
 ##Health Check
 
-```bash
+
 Manual
 kubectl get pods -n production
 kubectl port-forward svc/fastapi-service 8000:8000 -n production
@@ -50,6 +50,12 @@ bash scripts/health-check.sh
 
 Expected response
 { "status": "healthy", "timestamp": "..." }
+
+---
+##Rollback
+
+kubectl rollout undo deployment/fastapi-service -n production
+bash scripts/rollback.sh
 
 
 
