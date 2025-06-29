@@ -60,6 +60,31 @@ kubectl rollout undo deployment/fastapi-service -n production
 
 bash scripts/rollback.sh
 
+---
+Monitoring & Alerts
+
+Prometheus
+Metrics exposed at /metrics endpoint via Prometheus client
+
+Use prometheus.yml for config
+
+Grafana
+Import dashboard from monitoring/grafana-dashboard.json
+
+Key Metrics to Monitor:
+
+- http_requests_total
+
+- http_request_duration_seconds_bucket
+
+- http_requests_total{status=~"5.."} (error rate)
+
+Alerts
+Defined in monitoring/alerts.yml
+
+
+
+
 
 
 
