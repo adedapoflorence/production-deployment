@@ -60,10 +60,6 @@ docker build -t yourusername/fastapi-service:latest .
 # Run locally
 docker run -p 8000:8000 yourusername/fastapi-service:latest
 
-
-#Run locally
-docker run -p 8000:8000 yourusername/fastapi-service:latest
-
 ---
 Kubernetes Deployment
 
@@ -97,6 +93,13 @@ Secrets stored using k8s/secret.yaml
 Namespace-level Pod Security Admission labels
 
 RBAC rules defined under security/rbac.yaml
+
+---
+Monitoring
+Prometheus scrapes the /metrics endpoint.
+
+kubectl apply -f monitoring/prometheus.yml
+kubectl apply -f monitoring/alerts.yml
 
 
 
