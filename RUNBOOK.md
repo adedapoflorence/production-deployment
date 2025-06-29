@@ -55,6 +55,7 @@ Expected response
 ##Rollback
 
 kubectl rollout undo deployment/fastapi-service -n production
+
 bash scripts/rollback.sh
 
 
