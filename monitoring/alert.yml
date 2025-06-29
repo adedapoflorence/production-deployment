@@ -1,0 +1,10 @@
+groups:
+  - name: example-alert
+    rules:
+    - alert: HighErrorRate
+      expr: rate(http_requests_total{status=~"5.."}[1m]) > 0.05
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        description: "High error rate"
