@@ -76,13 +76,13 @@ CI/CD Pipeline
 
 The pipeline would automatically:
 
-1. Builds and pushes the Docker image
+- Builds and pushes the Docker image
 
-2. Apply the Kubernetes manifests
+- Apply the Kubernetes manifests
 
-3. Run a health check
+- Run a health check
 
-4. Rollback if unhealthy
+- Rollback if unhealthy
 
 Secrets required:
 
@@ -91,13 +91,13 @@ DOCKER_USERNAME, DOCKER_PASSWORD, KUBECONFIG
 ---
 Security
 
-NetworkPolicy to restrict ingress
+- NetworkPolicy to restrict ingress
 
-Secrets stored using k8s/secret.yaml
+- Secrets stored using k8s/secret.yaml
 
-Namespace-level Pod Security Admission labels
+- Namespace-level Pod Security Admission labels
 
-RBAC rules defined under security/rbac.yaml
+- RBAC rules defined under security/rbac.yaml
 
 ---
 Monitoring
