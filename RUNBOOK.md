@@ -66,10 +66,10 @@ Monitoring & Alerts
 Prometheus
 Metrics exposed at /metrics endpoint via Prometheus client
 
-Use prometheus.yml for config
+Use`prometheus.yml` for config
 
 Grafana
-Import dashboard from monitoring/grafana-dashboard.json
+Import dashboard from `monitoring/grafana-dashboard.json`
 
 Key Metrics to Monitor:
 
@@ -80,7 +80,7 @@ Key Metrics to Monitor:
 - http_requests_total{status=~"5.."} (error rate)
 
 Alerts
-Defined in monitoring/alerts.yml
+Defined in  `monitoring/alerts.yml`
 
 
 
