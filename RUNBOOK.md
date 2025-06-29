@@ -30,9 +30,29 @@ Actions performed:
 
 ##Manual Deployment
 
-```bash
-# Create secure namespace
+#Create secure namespace
 kubectl create namespace production
 
-# Apply K8s resources
+#Apply K8s resources
 kubectl apply -f k8s/ -n production
+
+---
+##Health Check
+
+```bash
+Manual
+kubectl get pods -n production
+kubectl port-forward svc/fastapi-service 8000:8000 -n production
+curl http://localhost:8000/health
+
+Automated
+bash scripts/health-check.sh
+
+Expected response
+{ "status": "healthy", "timestamp": "..." }
+
+
+
+
+
+
