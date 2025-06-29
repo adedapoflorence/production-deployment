@@ -1,1 +1,58 @@
-kdkk
+{
+  "id": null,
+  "title": "FastAPI Service Dashboard",
+  "tags": ["fastapi", "prometheus"],
+  "timezone": "browser",
+  "schemaVersion": 36,
+  "version": 1,
+  "refresh": "10s",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Total HTTP Requests",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total[1m]))",
+          "legendFormat": "All Endpoints",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "graph",
+      "title": "Request Duration (Histogram)",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(http_request_duration_seconds_bucket{le=\"1.0\"}[1m])",
+          "legendFormat": "{{le}} seconds",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "graph",
+      "title": "Error Rate",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{status=~\"5..\"}[1m]))",
+          "legendFormat": "5xx errors",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 8, "w": 12, "h": 8 }
+    }
+  ],
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "links": []
+}
+
